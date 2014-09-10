@@ -1,0 +1,230 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro);
+@font-face {
+  font-family: 'Source Code Pro';
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  color: #ecf0f1;
+  font-family: 'Source Code Pro';
+  font-size: 16px;
+}
+h1 {
+  font-size: 3em;
+  text-align: center;
+}
+svg {
+  display: block;
+  margin: auto;
+}
+.center-box {
+  position: absolute;
+  width: 100%;
+  height: 3em;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.bottom-box {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  margin: auto;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+}
+#wrapper {
+  background: url(/images/me.jpg) no-repeat center fixed;
+  background-size: 100%;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+.section {
+  width: 100%;
+  height: 100%;
+}
+#google-map {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+}
+#section1 {
+  position: relative;
+}
+#section1 p {
+  text-align: center;
+}
+#section1 .center_box {
+  height: 6em;
+}
+#section1 .icon_scroll {
+  display: block;
+  margin: 0 auto;
+  width: 30px;
+  height: 30px;
+  -moz-animation: scroll_anime 0.7s ease-in-out 0 infinite alternate;
+  -webkit-animation: scroll_anime 0.7s ease-in-out 0 infinite alternate;
+  -o-animation: scroll_anime 0.7s ease-in-out 0 infinite alternate;
+  -ms-animation: scroll_anime 0.7s ease-in-out 0 infinite alternate;
+}
+#section2 {
+  background: #2980b9;
+  position: absolute;
+  top: 100%;
+}
+#section2 h1 {
+  line-height: 100%;
+  width: 100%;
+  height: 100%;
+}
+#section2 .text-box {
+  bottom: 0%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#section2 #coding {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#section2 #coding .text-box {
+  left: 100%;
+}
+#section2 #brackets {
+  left: 100%;
+  padding-top: 3em;
+  position: absolute;
+  width: 100%;
+}
+#section2 #design {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#section2 #design .text-box {
+  right: 100%;
+}
+#section2 #browser {
+  right: 100%;
+  padding-top: 3em;
+  position: absolute;
+  width: 100%;
+}
+#section3 {
+  position: absolute;
+  top: 100%;
+}
+#section3 #timeline {
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+#section3 #footer {
+  background: #8e44ad;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+}
+#section3 #footer #footer-l,
+#section3 #footer #footer-r {
+  width: 50%;
+  height: 100%;
+}
+@font-face {
+  font-family: 'icomoon';
+  src: url('fonts/icomoon.eot?-xsxn1t');
+  src: url('fonts/icomoon.eot?#iefix-xsxn1t') format('embedded-opentype'), url('fonts/icomoon.woff?-xsxn1t') format('woff'), url('fonts/icomoon.ttf?-xsxn1t') format('truetype'), url('fonts/icomoon.svg?-xsxn1t#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-keyboard:before {
+  content: "\e602";
+}
+.icon-smiley:before {
+  content: "\e600";
+}
+.icon-code:before {
+  content: "\e601";
+}
+.icon_scroll:before {
+  content: '';
+  height: 20px;
+  width: 20px;
+  display: block;
+  border: 5px solid #ecf0f1;
+  border-right-width: 0;
+  border-top-width: 0;
+  transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+}
+@keyframes scroll_anime {
+  0% {
+    margin-top: 0;
+  }
+  100% {
+    margin-top: 10px;
+  }
+}
+@-moz-keyframes scroll_anime {
+  0% {
+    margin-top: 0;
+  }
+  100% {
+    margin-top: 10px;
+  }
+}
+@-webkit-keyframes scroll_anime {
+  0% {
+    margin-top: 0;
+  }
+  100% {
+    margin-top: 10px;
+  }
+}
+@-o-keyframes scroll_anime {
+  0% {
+    margin-top: 0;
+  }
+  100% {
+    margin-top: 10px;
+  }
+}
+@-ms-keyframes scroll_anime {
+  0% {
+    margin-top: 0;
+  }
+  100% {
+    margin-top: 10px;
+  }
+}
+.scrollpos {
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  right: 0;
+}

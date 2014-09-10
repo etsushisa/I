@@ -1,8 +1,202 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+@import "define.less";
+@import "functions.less";
+
+// @import url(http://fonts.googleapis.com/css?family=Inconsolata);
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro);
+
+@font-face {
+    font-family: 'Source Code Pro';
+//    src: url(http://fonts.googleapis.com/css?family=Inconsolata);
 }
 
-a {
-  color: #00B7FF;
+html, body {
+    .func_size();
+}
+body {
+//    background: black;
+    color: @color_default;
+    font-family: 'Source Code Pro';
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+}
+svg {
+    display: block;
+    margin: auto;
+//    max-width: 900px;
+//    max-height: 600px;
+}
+
+.center-box {
+    .func_absolute_center(3em);
+}
+.bottom-box {
+    .func_absolute_bottom(20px, 50px);
+}
+
+#wrapper {
+    background: url(/images/me.jpg) no-repeat center fixed;
+    background-size: 100%;
+    position: fixed;
+    
+    .func_size();
+}
+.section {
+    .func_size();
+}
+
+#google-map {
+    position: absolute;
+    top: 100%;
+    .func_size();
+}
+#section1 {
+    position: relative;
+    
+    p { text-align: center; }
+    .center_box {
+        height: 6em;    
+    }
+    .icon_scroll {
+        display: block;
+        margin: 0 auto;
+        .func_size(30px, 30px);
+        .func_animation(scroll_anime, 0.7s, ease-in-out, 0, infinite, alternate);
+    }
+}
+#section2 {
+    background: rgb(41, 128, 185);
+    position: absolute;
+    top: 100%;
+    
+    h1 {
+        line-height: 100%;
+        
+        .func_size();
+    }
+    
+    .text-box {
+        bottom: 0%;
+        position: absolute;
+
+        .func_size();
+    }        
+
+    #coding {
+        position: absolute;
+        .func_size();
+        
+        .text-box {
+            left: 100%;
+        }        
+    }
+    #brackets {
+        left: 100%;
+        padding-top: 3em;
+        position: absolute;
+        width: 100%;
+    }
+    
+    #design {
+        position: absolute;
+        .func_size();
+        
+        .text-box {
+            right: 100%;
+        }        
+    }
+    #browser {
+        right: 100%;
+        padding-top: 3em;
+        position: absolute;
+        width: 100%;
+    }
+}
+#section3 {
+    position: absolute;
+    top: 100%;
+
+    #timeline {
+        top: 0;
+
+        .func_size();
+    }
+    #footer {
+        background: rgb(142, 68, 173);
+        bottom: 0;
+        
+        .func_size(0);
+        
+        #footer-l, #footer-r {
+            .func_size(100%, 50%);
+        }
+    }
+}
+
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?-xsxn1t');
+	src:url('fonts/icomoon.eot?#iefix-xsxn1t') format('embedded-opentype'),
+		url('fonts/icomoon.woff?-xsxn1t') format('woff'),
+		url('fonts/icomoon.ttf?-xsxn1t') format('truetype'),
+		url('fonts/icomoon.svg?-xsxn1t#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+    
+}
+.icon-keyboard:before {
+	content: "\e602";
+}
+.icon-smiley:before {
+	content: "\e600";
+//	font-size: 32px;
+}
+.icon-code:before {
+	content: "\e601";
+}
+
+// icon
+.icon_scroll:before{
+    content:''; 
+    height:20px;
+    width:20px; 
+    display:block; 
+    border:5px solid @color_default; 
+    border-right-width:0; 
+    border-top-width:0; 
+    .func_transform(rotate(-45deg));
+}
+
+// animation
+.func_keyframes(
+    scroll_anime,
+    {margin-top: 0},
+    {margin-top: 10px}
+);
+
+
+// Debugging
+.scrollpos{
+    position: fixed;
+    z-index: 200;
+//    background: #000;
+    top: 0;
+    right: 0;
 }

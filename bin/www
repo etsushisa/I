@@ -1,4 +1,10 @@
 #!/usr/bin/env node
+
+'use strict';
+
+// use coffeescript
+require('coffee-script/register');
+
 var debug = require('debug')('I');
 var app = require('../app');
 

@@ -1,0 +1,52 @@
+.func_size(@height: 100%, @width: 100%) {
+    width: @width;
+    height: @height;
+}
+.func_max_size(@height: 100%, @width: 100%) {
+    max-width: @width;    
+    max-height: @height;
+}
+
+.func_absolute_center(@height: 100%, @width: 100%) {
+    position: absolute;
+    width: @width;
+    height: @height;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.func_absolute_bottom(@bottom: 0, @height: 100%, @width: 100%) {
+    position: absolute;
+    width: @width;
+    height: @height;
+    margin: auto;
+    bottom: @bottom;
+    left: 0;
+    right: 0;
+}
+
+.func_transform(@rule) {
+    transform:@rule;
+    -moz-transform:@rule;
+    -webkit-transform:@rule;
+    -o-transform:@rule;
+    -ms-transform:@rule;
+}
+
+.func_animation(@name, @duration, @timing_func, @delay, @count, @direct) {
+    -moz-animation: @name @duration @timing_func @delay @count @direct;
+    -webkit-animation: @name @duration @timing_func @delay @count @direct;
+    -o-animation: @name @duration @timing_func @delay @count @direct;
+    -ms-animation: @name @duration @timing_func @delay @count @direct;
+}
+
+.func_keyframes(@name, @from_rules, @to_rules) {
+    @keyframes @name { 0% { @from_rules(); } 100% { @to_rules(); } }
+    @-moz-keyframes @name { 0% { @from_rules(); } 100% { @to_rules(); } }
+    @-webkit-keyframes @name { 0% { @from_rules(); } 100% { @to_rules(); } }
+    @-o-keyframes @name { 0% { @from_rules(); } 100% { @to_rules(); } }
+    @-ms-keyframes @name { 0% { @from_rules(); } 100% { @to_rules(); } }
+}

@@ -1,5 +1,70 @@
 extends layout
 
+
 block content
-  h1= title
-  p Welcome to #{title}
+    .scrollpos
+
+    #google-map(data-0='top:100%' data-1000='top:0%')
+
+    #section1.section(data-0='bottom:0%' data-1000='bottom:100%')
+        .center-box
+            h1 Hi, I'm Hao, a Regular
+            h1 Web&App Developer 
+                span.icon-smiley
+        .bottom-box
+            p Scroll to see more
+            span.icon_scroll.icon
+
+    #section2.section(data-0='top:100%' data-1000='top:0%' data-14000='top:0%' data-15000='top:-100%')
+        #coding
+            .text-box(data-500='left:100%' data-1000='left:0%' data-1500='left:0%' data-2000='left:-100%')
+                .center-box
+                    h1 I do Coding 
+                        span.icon-keyboard
+            #brackets(data-1500='left:100%' data-2000='left:0%' data-9500='left:0%' data-10000='left:-100%')
+                include brackets.jade
+
+        #design
+            .text-box(data-10000='right:100%' data-10500='right:0%' data-11000='right:0%' data-11500='right:-100%')
+                .center-box
+                    h1 and Playing Designs 
+                        span.icon-code
+            #browser(data-11000='right:100%' data-11500='right:0%' data-13500='right:0%' data-14000='right:-100%')
+                include browser.jade
+
+    #section3.section(data-14000='top:100%' data-15000='top:0%')
+        #timeline(data-19500='height:100%' data-20000='height:50%')
+            include timeline.jade
+        #footer(data-19500='height:0%' data-20000='height:50%')
+            #footer-l
+            #footer-r
+
+block scripts
+    script(src='//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=en')
+    script.
+        var map;
+        var motosumiyoshi = new google.maps.LatLng(35.564473, 139.654089);
+        var styles = [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]}];
+        function initialize() {
+            var mapOptions = {
+                zoom: 8,
+                center: motosumiyoshi,
+                disableDefaultUI: true,
+                draggable: false,
+                scrollwheel: false,
+                keyboardShortcuts: false,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                styles: styles
+            };
+            map = new google.maps.Map(document.getElementById('google-map'), mapOptions);
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+        
+    script(src='//cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.26/skrollr.min.js')
+    script.
+        var s = skrollr.init({
+            render: function (data) {
+                document.querySelector('.scrollpos').innerHTML = data.curTop;
+            }
+        });
+
