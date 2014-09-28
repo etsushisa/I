@@ -33,11 +33,31 @@ block content
                 include browser.jade
 
     #section3.section(data-14000='top:100%' data-15000='top:0%')
+        h1 Timeline
         #timeline(data-19500='height:100%' data-20000='height:50%')
             include timeline.jade
         #footer(data-19500='height:0%' data-20000='height:50%')
-            #footer-l
-            #footer-r
+            .container
+                h2 About this website
+                #footer-l
+                    p powered by
+                    div
+                        object(data='/images/nodejs-logo.svg' type='image/svg+xml') 
+                    p and hosted on
+                    div
+                        object(data='/images/heroku-logo.svg' type='image/svg+xml') 
+
+                    p copyright 2014 Hao Zuo
+                    //- div
+                    //-     a(href="#") Facebook
+                    //- div
+                    //-     a(href="#") Twitter
+                    //- div
+                    //-     a(href="#") Linkdin
+                #footer-r
+                    .pie
+                        include pie.jade
+
 
 block scripts
     script(src='//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=en')
@@ -59,8 +79,7 @@ block scripts
             map = new google.maps.Map(document.getElementById('google-map'), mapOptions);
         }
         google.maps.event.addDomListener(window, 'load', initialize);
-        
-    script(src='//cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.26/skrollr.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.26/skrollr.js')
     script.
         var s = skrollr.init({
             render: function (data) {

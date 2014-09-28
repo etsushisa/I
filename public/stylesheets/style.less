@@ -18,9 +18,16 @@ body {
     font-family: 'Source Code Pro';
     font-size: 16px;
 }
-
+a {
+    color: @color_default;
+    text-decoration: none;
+}
 h1 {
     font-size: 3em;
+    text-align: center;
+}
+h2 {
+    font-size: 1.5em;
     text-align: center;
 }
 svg {
@@ -43,6 +50,10 @@ svg {
     position: fixed;
     
     .func_size();
+}
+.container {
+    max-width: 900px;
+    margin: auto;
 }
 .section {
     .func_size();
@@ -127,11 +138,30 @@ svg {
     #footer {
         background: rgb(142, 68, 173);
         bottom: 0;
+        position: absolute;
         
-        .func_size(0);
-        
+        .func_size();
+
+        // .container {
+        //     height: 100%;
+        // }
         #footer-l, #footer-r {
-            .func_size(100%, 50%);
+            float: left;
+            width: 50%;
+        }
+        #footer-l {
+            p {
+                line-height: 32px;
+                height: 32px;
+            }
+            object {
+                width: 40%;
+            }
+        }
+        #footer-r {
+            div {
+               .func_size();
+            }
         }
     }
 }
@@ -159,7 +189,6 @@ svg {
 	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-    
 }
 .icon-keyboard:before {
 	content: "\e602";

@@ -12,8 +12,16 @@ body {
   font-family: 'Source Code Pro';
   font-size: 16px;
 }
+a {
+  color: #ecf0f1;
+  text-decoration: none;
+}
 h1 {
   font-size: 3em;
+  text-align: center;
+}
+h2 {
+  font-size: 1.5em;
   text-align: center;
 }
 svg {
@@ -45,6 +53,10 @@ svg {
   position: fixed;
   width: 100%;
   height: 100%;
+}
+.container {
+  max-width: 900px;
+  margin: auto;
 }
 .section {
   width: 100%;
@@ -131,12 +143,24 @@ svg {
 #section3 #footer {
   background: #8e44ad;
   bottom: 0;
+  position: absolute;
   width: 100%;
-  height: 0;
+  height: 100%;
 }
 #section3 #footer #footer-l,
 #section3 #footer #footer-r {
+  float: left;
   width: 50%;
+}
+#section3 #footer #footer-l p {
+  line-height: 32px;
+  height: 32px;
+}
+#section3 #footer #footer-l object {
+  width: 40%;
+}
+#section3 #footer #footer-r div {
+  width: 100%;
   height: 100%;
 }
 @font-face {

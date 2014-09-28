@@ -78,7 +78,7 @@
     }
 
     function drawEvent() {
-        events = [
+        var events = [
             {text: ['First Macintosh', 'on sale'], x: 70, y: y - 130, pos: 260},   // 1984.1.24
             {text: ['Microsoft Windows', 'released'], x: 110, y: y - 70, pos: 490},    // 1985.11.20
             {text: ['The first website', 'goes online'], x: 240, y: y - 100, pos: 1250},  // 1991

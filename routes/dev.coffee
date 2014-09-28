@@ -17,4 +17,8 @@ router.get '/timeline', (req, res) ->
     res.render('dev/timeline', {title: 'Timeline'})
     return
 
+router.get '/pie', (req, res) ->
+    res.render('dev/pie', {title: 'Pie'})
+    return    
+
 module.exports = router

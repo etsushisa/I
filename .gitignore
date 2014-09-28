@@ -2,3 +2,7 @@
 Thumbs.db
 /node_modules
 
+_app.js
+_index.js
+_users.js
+style.css
