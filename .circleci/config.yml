@@ -9,7 +9,7 @@ version: 2.1
 jobs:
   Hello-World:
     docker:
-      - image: cimg/base:2021.04
+      - image: alpine:3.15
     steps:
       - run:
           name: Saying Hello
@@ -34,6 +34,14 @@ jobs:
           name: Running the Node Container
           command: |
             node -v
+  Now-Complete:
+    docker:
+      - image: alpine:3.15
+    steps:
+      - run:
+          name: Approval Complete
+          command: |
+            echo 'The work is now complete.'
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -47,6 +55,14 @@ workflows:
       - Using-Node:
           requires:
             - Fetch-Code
+      - Hold-for-Approval:
+          type: approval
+          requires:
+            - Using-Node
+            - Fetch-Code
+      - Now-Complete:
+          requires:
+            - Hold-for-Approval
 #   sample: # This is the name of the workflow, feel free to change it to better match your workflow.
 #     # Inside the workflow, you define the jobs you want to run.
 #     jobs:
