@@ -7,22 +7,22 @@ version: 2.1
 #   node: circleci/node@4.7
 
 jobs:
-  say_hello:
+  build:
     docker:
-      - image: cimg/base:2022.05
+      - image: alpine:3.15
     steps:
-      - run: echo "Say hello to YAML!"
-  say_goodbye:
-    docker:
-      - image: cimg/base:2022.05
-    steps:
-      - run: echo "Say goodbye to YAML!"
+      - run:
+          name: The First Step
+          command: |
+            echo 'Hello World!'
+            echo 'This is the delivery pipeline'
+
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
-workflows:
-  sample: # This is the name of the workflow, feel free to change it to better match your workflow.
-    # Inside the workflow, you define the jobs you want to run.
-    jobs:
+# workflows:
+#   sample: # This is the name of the workflow, feel free to change it to better match your workflow.
+#     # Inside the workflow, you define the jobs you want to run.
+#     jobs:
       # - node/test:
       #     # This is the node version to use for the `cimg/node` tag
       #     # Relevant tags can be found on the CircleCI Developer Hub
@@ -30,5 +30,3 @@ workflows:
       #     version: '16.10'
       #     # If you are using yarn, change the line below from "npm" to "yarn"
       #     pkg-manager: npm
-      - say_hello
-      - say_goodbye
